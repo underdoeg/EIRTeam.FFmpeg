@@ -92,7 +92,7 @@ def _ffmpeg_emitter(target, source, env):
 
 def ffmpeg_download_builder(env, target, source):
     bkw = {
-        "action": env.Run(download_ffmpeg, subprocess=False),
+        "action": env.Run(download_ffmpeg, subprocess=False, short_message="download ffmpeg"),
         "target_factory": env.fs.Entry,
         "source_factory": env.fs.Entry,
         "emitter": _ffmpeg_emitter,
